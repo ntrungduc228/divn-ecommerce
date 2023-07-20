@@ -15,7 +15,8 @@ async function bootstrap() {
     }),
   );
   const configService = app.get(ConfigService);
-  await app.listen(configService.get('servicePort') || 5001);
-  console.log('Start Product Service: ', configService.get('servicePort'));
+  await app.listen(5001);
+  // console.log('Start Product Service: ', configService.get('servicePort'));
+  console.log('Start Product Service: 5001');
 }
 bootstrap();
