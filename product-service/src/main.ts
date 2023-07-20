@@ -23,12 +23,13 @@ async function bootstrap() {
         'amqps://ubjmugow:hwouG3iu_b9AkJBtOUlQbNDqb4LA_lNY@armadillo.rmq.cloudamqp.com/ubjmugow',
       ],
       queue: 'product_queue',
+      noAck: false,
       queueOptions: {
         durable: false,
       },
     },
   });
-
+  await app.startAllMicroservices();
   await app.listen(5001, () => {
     console.log('Start Product Service: 5001');
   });
